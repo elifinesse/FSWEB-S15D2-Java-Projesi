@@ -34,7 +34,7 @@ public class TaskData {
         }
     }
 
-    public Set<Task> getUnion(List<HashSet> taskList){
+    public Set<Task> getUnion(List<HashSet<Task>> taskList){
         Set<Task> tasksUnion = new HashSet<>();
         for(HashSet task: taskList){
             tasksUnion.addAll(task);

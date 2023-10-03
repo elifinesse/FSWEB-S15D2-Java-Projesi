@@ -33,5 +33,6 @@ public class Main {
         TaskData october = new TaskData(annsTasks, bobsTasks, carolsTasks);
 
         System.out.println(october.getTasks("all"));
+        october.getTasks("heeey");
     }
 }
