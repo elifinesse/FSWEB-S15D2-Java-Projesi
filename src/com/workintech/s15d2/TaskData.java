@@ -17,13 +17,13 @@ public class TaskData {
 
 
     public Set<Task> getTasks(String assignee){
-        if(assignee.equals("ann")){
+        if(assignee.toLowerCase().equals("ann")){
             return annsTasks;
-        } else if(assignee.equals("bob")){
+        } else if(assignee.toLowerCase().equals("bob")){
             return bobsTasks;
-        } else if(assignee.equals("carol")){
+        } else if(assignee.toLowerCase().equals("carol")){
             return carolsTasks;
-        } else if(assignee.equals("all")){
+        } else if(assignee.toLowerCase().equals("all")){
             Set<Task> allTasks = new HashSet<>(annsTasks);
             allTasks.addAll(bobsTasks);
             allTasks.addAll(carolsTasks);
@@ -34,9 +34,9 @@ public class TaskData {
         }
     }
 
-    public Set<Task> getUnion(List<HashSet<Task>> taskList){
+    public Set<Task> getUnion(List<Set<Task>> taskList){
         Set<Task> tasksUnion = new HashSet<>();
-        for(HashSet task: taskList){
+        for(Set task: taskList){
             tasksUnion.addAll(task);
         }
         return tasksUnion;

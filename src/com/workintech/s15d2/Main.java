@@ -1,6 +1,8 @@
 package com.workintech.s15d2;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -17,14 +19,13 @@ public class Main {
         Set<Task> annsTasks = new HashSet<>();
         annsTasks.add(task1);
         annsTasks.add(task4);
+        annsTasks.add(task5);
 
         Set<Task> bobsTasks = new HashSet<>();
         bobsTasks.add(task2);
-        bobsTasks.add(task5);
         bobsTasks.add(task6);
 
         Set<Task> carolsTasks = new HashSet<>();
-        carolsTasks.add(task1);
         carolsTasks.add(task3);
         carolsTasks.add(task4);
         carolsTasks.add(task7);
@@ -32,7 +33,17 @@ public class Main {
 
         TaskData october = new TaskData(annsTasks, bobsTasks, carolsTasks);
 
-        System.out.println(october.getTasks("all"));
+        List<Set<Task>> taskSetList = new ArrayList<>();
+        taskSetList.add(carolsTasks);
+        taskSetList.add(annsTasks);
+        taskSetList.add(bobsTasks);
+
+        System.out.println(october.getTasks("ALL"));
         october.getTasks("heeey");
+        System.out.println("DIFFERENCES: " + october.getDifference(bobsTasks, carolsTasks));
+        System.out.println("INTERSECTIONS: " + october.getIntersect(bobsTasks, carolsTasks));
+        System.out.println("LIST TO SET, ALL TASKS: " + october.getUnion(taskSetList));
+
+
     }
 }
